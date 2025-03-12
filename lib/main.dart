@@ -13,7 +13,7 @@ class MainApp extends StatefulWidget {
 
 class _MainAppState extends State<MainApp> {
 
-
+String botton="cliked button";
 TextEditingController controller = TextEditingController();
 List<String> tasklist = [];
   
@@ -22,6 +22,11 @@ List<String> tasklist = [];
     return  MaterialApp(
       debugShowCheckedModeBanner: false,
       home: Scaffold(
+          appBar: AppBar(
+          title: Text("Todo List"),
+          centerTitle: true,
+          backgroundColor: Colors.blue,
+        ),
         body: Column(
           children: [
             Row(
@@ -29,14 +34,20 @@ List<String> tasklist = [];
                 Padding(
                   padding: EdgeInsets.all(10.0),
                   child: Expanded(
-                    child: Container(height: 50,
-                    width: 300,
+                    child: Container(
+                      height: 50,
+                      width: 250,
                       child: TextField(
                         controller: controller,
                         decoration: InputDecoration(
                           
-                          border: OutlineInputBorder(),
-                         labelText:"enter the value",
+                          border: OutlineInputBorder(
+
+                          ),
+                         labelText:"type any text",
+                         labelStyle: TextStyle(
+                          fontSize: 17,
+                         )
                          
                         ),
                       ),
